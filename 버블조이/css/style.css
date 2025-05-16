@@ -1,0 +1,1114 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+body{
+  font-size: 16px;
+}
+
+#wrap {
+    min-width: 1400px;
+}
+
+/* TOP */
+.top{
+    display: flex;
+    margin: 0 auto;
+    width: 1320px;
+    font-family: 'NanumSquareRound';
+}
+
+.top-logo{
+    margin: 15px auto;
+}
+
+.top > ul{
+    display: flex;
+}
+
+.top ul li a{
+    display: block;
+    color: #bbbbbb;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px;   
+}
+
+.top img{
+    display: block;
+    margin: 0 auto;
+    /* margin-left: 82px; */
+    transform: translate(30%, 0);
+}
+/* TOP */
+
+/* 헤더 */
+header{
+    width: 100%;
+    height: 140px;
+    font-family: 'NanumSquareRound';
+    position: fixed;
+    top: 0px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 200, 1);
+    z-index: 9999; 
+    /* 다른 요소들보다 위에 보이게 해주는 코드 */
+    /* transform: translateY(-100%); */
+    transition: transform 0.1s ease;
+}
+
+header.visible{
+  transform: translateY(0) !important;
+  transition-duration: .3s;
+}
+
+header:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition-duration: .2s;
+}
+   
+.header_in{
+    width: 1100px;
+    display: flex;
+    margin: 5px auto;
+}
+
+.header_in>ul{
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    /* position: relative; */
+    /* cursor: pointer; */
+}
+
+.header_in ul li{
+    text-align: center;
+  }
+
+.header_in>ul>li>a{
+  /* display: block; */
+  padding: 10px 41.5px;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+ }
+.header_in>ul>li>a:hover::after{
+  /* background-color: white; */
+  /* transition-duration: .3s; */
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 45px;
+  background: #fff;
+  border-radius: 50%;     /* 기본 원 형태 */
+  /* 여러 개의 그림자를 겹쳐서 구름 모양 만들기 */
+  box-shadow:
+    -30px 15px 0 0 #fff,
+     0    20px 0 0 #fff,
+    30px 15px 0 0 #fff;
+  pointer-events: none;
+  z-index: -1;  
+}
+
+.header_in ul li a:hover{
+  color: #7BB0E1;
+  transition-duration: .3s;
+}
+
+.sub_menu{
+  display: none;
+  margin-top: 9px;
+}
+
+.sub_menu>ul{
+  display:flex;
+}
+
+.header_items:hover .sub_menu{
+  display: block;
+}
+
+.header_items{
+  /* background-color: rgba(255, 255, 200, 1); */
+  border-radius: 5px;
+  width: 160px;
+  position: relative;
+}
+
+.sub_menu>ul{
+  position:absolute;
+  top: 50px;
+  left: -60px;
+  background-color:  rgba(255, 255, 200, 1);
+  border-radius: 10px;
+  padding: 15px 10px;
+}
+
+.sub_menu>ul>li>a{
+  padding: 20px 15px;
+}
+
+.sub_menu>ul>li{
+  /* border-top: 1px solid rgba(235, 235, 235, 0.664); */
+  /* width: 300px; */
+}
+
+/* 헤더 */
+
+/* 배너 */
+.banner{
+    position: relative;
+    align-items: center;
+    margin-top: 120px;
+    object-fit: cover
+}
+
+.banner-slider{
+    position: absolute;
+    bottom: 7px;
+    display: flex;
+    transform: translate(-50%, -50%);
+}
+
+/* .swiper {
+    overflow: hidden;
+  } */
+  
+
+  body, html {
+    overflow-x: hidden;
+  }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 41.6667vw; /* 800px ÷ 1920px × 100 = 약 41.67vw */
+    max-height: 800px;
+    /* 화면이 엄청 넓어져도 800px 이상은 안 늘어나게 */
+    overflow: hidden;
+  }
+
+  .swiper-slide>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 기본 동그라미 색상 */
+  .swiper-pagination-bullet{
+    background-color: #d8d8d8c4;
+    opacity: 1;
+  }
+
+  /* 현재 선택된 동그라미 색상 */
+    .swiper-pagination-bullet-active {
+    background-color: #ffffff; /* 진한 핑크나 강조색 */
+  }
+
+
+/* 배너 */
+
+/* section */
+
+section{
+    /* z-index: -1; */
+    width: 100%;
+    font-family: 'NanumSquareRound';
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 40px;
+    position: relative;
+    /* background-color: purple; */
+}
+
+.fixed_flower_pink{
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  width: 10vw;
+}
+
+.fixed_flower_blue{
+  position: absolute;
+  top: 2200px;
+  right: 30px;
+  width: 10vw;
+}
+
+
+.section_in{
+    width: 1320px;
+    margin: 0 auto;
+    
+    /* padding-top: 83px; */
+    
+}
+
+
+#brandstory h2{
+    text-align: center;
+    padding: 200px 0 150px 0;
+    font-family: 'NanumSquareRound';
+    font-size: 40px;
+    font-weight: bold;
+}
+
+section ul li{
+    display: flex;
+    height: 470px;
+    justify-content: space-between;
+    margin-bottom: 200px;
+}
+
+.text{
+    padding: 30px 0;
+    text-align: left;
+    /* background-color: aqua; */
+    width: 454px;
+}
+
+.text h3{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 50px;
+    padding-bottom: 30px;
+}
+
+.text p{
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+
+section ul li img{
+    margin-bottom: 150px;
+    width: 840px;
+    height: 470px;
+}
+
+/* section */
+
+/* video */
+.center-video{
+    display: block;
+    margin: 0 auto;
+    width: 1320px;
+    max-width: 100%;
+}
+
+/* video */
+
+/* 오늘의 기분 pick */
+#pick{
+    margin: 200px auto;
+    font-family: 'NanumSquareRound';
+    /* background: #f7faff; */
+    text-align: center;
+    width: 100%;
+    /* height: 1200px; */
+    display:grid;
+    place-items: center;
+}
+
+#pick h2 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 20px;
+    padding-top: 80px;
+  }
+
+  .mood-buttons button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .mood-buttons button:hover {
+    background-color: #ffdd33;
+  }
+  .mood-buttons button:hover:nth-child(1){
+    background-color: #AEEFFF /* 상쾌하게 */
+  } 
+  .mood-buttons button:hover:nth-child(2){
+    background-color: #ffe98f /* 포근하게 */
+  } 
+  .mood-buttons button:hover:nth-child(3){
+    background-color: #EADCF8 /* 기분전환 */
+  }
+
+  #fresh.active .mood-buttons button:nth-child(1){
+    background-color: #AEEFFF;
+  }
+  #cozy.active .mood-buttons button:nth-child(2){
+    background-color: #ffe98f;
+  }
+  #happy.active .mood-buttons button:nth-child(3){
+    background-color: #EADCF8;
+  }
+
+
+  #fresh{
+    background: url(../img/상쾌하게.png) no-repeat center;
+  }
+  #cozy{
+    background: url(../img/포근하게.png) no-repeat center;
+  }
+  #happy{
+    background: url(../img/기분좋게.png) no-repeat center;
+  }
+
+  .recommendation {
+    width: 1320px;
+    height: 865px;
+    margin: 0px auto;
+    flex-direction: column;
+    justify-content: center; /* 세로 가운데 정렬 */
+    align-items: center;     /* 가로 가운데 정렬 */
+    display: none;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+
+  .recommendation h3 {
+    margin-top: 20px;
+    color: #005288;
+  }
+
+  .recommendation p {
+    color: #555;
+  }
+
+  .recommendation.active {
+    display: block;
+  }
+
+  .pick-items{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 세로 중앙 정렬 */
+    gap: 120px;
+    /* padding: 30px 0; */
+    height: 460px;
+  }
+
+  .pick-item{
+    /* padding: 15px;
+    text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* 내부 세로 정렬 */
+    height: 100%;
+  }
+
+  .pick-item>img{
+    width: 200px;
+    transition: transform 0.3s ease;
+  }
+
+  #roomspread img {
+    height: 400px; /* 원하시는 높이로 조절 */
+    width: auto;   /* 비율 유지 */
+    transition: transform 0.3s ease;
+  }
+
+  #bodywash img{
+    width: auto;
+    height: 376px;
+    transition: transform 0.3s ease;
+  }
+
+  .pick-item>img:hover{
+    transform: scale(1.1); /* 10% 확대 */
+    /* width: 250px;
+    transition-duration: .3s; */
+  }
+
+  #roomspread>img:hover{
+    transform: scale(1.1); /* 10% 확대 */
+  }
+
+  #bodywash>img:hover{
+    transform: scale(1.1); /* 10% 확대 */
+  }
+
+ 
+/* 오늘의 기분 pick */
+
+/* Bathbomb 시작 */
+
+#bathbomb {
+    width: 1320px;
+    /* min-height: 1500px; */
+    margin: 200px auto;
+    text-align: center;
+    font-family: 'NanumSquareRound';
+  }
+  
+  #bathbomb h2 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  /* swiper-container */
+  .swiper.bathbomb-swiper {
+    margin-top: 100px;
+    
+  }
+
+  .swiper-slide {
+    height: auto;
+    /* max-height: 1000px; */
+  }
+  
+  /* 슬라이드 1개에 포함될 6개 제품 정렬 */
+  .product-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3개씩 한 줄 */
+    gap: 30px;
+    padding: 0 50px;
+    align-items: start;
+  }
+  
+  /* 개별 제품 카드 */
+  .product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* height: 100%; */
+    height: 290px;
+    padding: 40px 20px;
+    line-height: 20px;
+    text-align: center;
+    border: 4px solid rgba(255, 255, 255, 0.884);
+    border-radius: 10px;
+    /* background-color: #f4faff; */
+    background-color: #fdfdfd;
+    transition: background-color 0.4s ease;
+  }
+
+  .product:hover{
+    /* background-color: #fcfcf3; */
+    background-color: #f4faff;
+  }
+  
+  .product:hover img{
+    transition: transform .4s ease;
+    transform: scale(1.05);
+  }
+
+  /* 제품 이미지 */
+  .product img {
+    text-align: center;
+    display: block;
+    width: 11vw;
+  }
+
+  .perfume_roomspray{
+    width: 86px;
+    height: 356px;
+  }
+  
+  
+  /* 제품 이름 */
+  .product h4 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px 0 10px 0;
+  }
+  
+  /* 제품 가격 */
+  .product h5 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #555;
+    padding-right: 15px;
+  }
+  
+  /* 제품 설명 */
+  .product p {
+    font-size: 16px;
+    padding: 15px; 
+    min-height: 80px; /* 설명 높이 고정해 카드 균형 맞추기*/
+  }
+  
+  /* swiper navigation 버튼 위치 조정 */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: #333;
+    top: 50%;
+    /* transform: translateY(-50%); */
+  }
+  
+  .swiper-button-prev {
+    left: 0;
+  }
+  
+  .swiper-button-next {
+    right: 0;
+  }
+
+  /* .grape{
+    padding-top: 23px;
+    width: 250px;
+    height: 250px;
+  } */
+  
+  /* .twilight{
+    padding-bottom: 20px;
+  } */
+
+
+/* Bathbomb 끝 */
+
+/* Body Items 시작 */
+
+#items{
+  /* position: relative; */
+  width: 1320px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'NanumSquareRound';
+  margin-bottom: 200px;
+}
+
+.fixed_flower_orange{
+  position: absolute;
+  top: 0px;
+  right: 30px;
+}
+
+#items h2{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+#items span{
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+#items ul{
+    display: flex;
+}
+
+.item_product{
+  width: auto;
+  /* height: auto; */
+  display: block;
+}
+
+
+.item_img{
+  height: auto !important;  /* 원하는 높이*/
+  width: 10vw !important;    /* 비율 유지 */
+  object-fit: contain;       /* 영역 내에 맞추기 */
+  /* display: block; */
+}
+
+.item_roomspray_img{
+  width: auto !important;
+  object-fit: contain;
+}
+
+
+/* Body Items Swiper 구조 */
+
+.items-container {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-image {
+  flex-shrink: 0; /* 이미지 고정 */
+}
+
+
+.items-swiper {
+  width: 1320px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.items-slide {
+  display: flex;
+  /* justify-content: space-between;  */
+  align-items: center;
+  gap: 100px;
+}
+
+.left-image img {
+  width: 550px;
+  border-radius: 40px;
+}
+
+.right-products {
+  display: flex;
+  flex-direction: row; /* ← 변경 */
+  gap: 100px;
+  justify-content: end;
+  overflow: visible;
+  /* height: 764.24px; */
+
+}
+
+.right-products .item_product {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+
+/* .body_bodyscrub_box{
+  margin-top: 300px;
+}
+
+.body_bodywash_box{
+  margin-top: 200px;
+}
+
+.body_bodyscrub_text{
+  margin-top: 50px;
+}
+
+.body_bodywash_text{
+  margin-top: 43px;
+}
+
+.body_bodywash_text p{
+  padding-bottom: 25px;
+} */
+  
+
+.item_product .item_text h4 {
+  font-size: 20px;
+  margin: 10px 0;
+  margin-top: 30px;
+}
+
+.item_product .item_text p {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.item_product .item_text h5 {
+  font-size: 16px;
+  color: #555;
+}
+
+.swiper-button-prev.bodyitems-prev,
+.swiper-button-next.bodyitems-next {
+  color: #333;
+}
+
+
+/* Body Items 끝 */
+
+#event ul{
+    display: flex;
+}
+
+#event ul li img{
+    border-radius: 40px;
+}
+
+#event {
+  width: 1320px;
+  margin: 0px auto;
+  text-align: center;
+  font-family: 'NanumSquareRound';
+  margin-bottom: 200px;
+}
+
+#event h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 100px;
+}
+
+.swiper.event-swiper {
+  width: 100%;
+}
+
+.event-swiper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+
+.swiper-button-next.event-next {
+  color: #333;
+}
+
+.event-swiper {
+  width: 1320px;
+  
+}
+
+.event-swiper .swiper-slide {
+  border-radius: 20px;
+  overflow: hidden;
+  width: 65%; /* 양옆 잘리게 */
+  max-width: 1000px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.event-swiper .swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+/* 리뷰 시작 */
+
+.review-section {
+  width: 1320px;
+  margin: 0px auto;
+  text-align: center;      /* 제목과 그리드 모두 가운데 정렬 */
+  font-family: 'NanumSquareRound';
+  z-index: auto;
+}
+
+.review-title {
+  font-size: 40px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 1320px;
+  margin: 100px auto; /* 원하는 여백 조절 */
+}
+
+/* 카드 기본 스타일 */
+.review-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 27px;
+}
+
+/* 이미지 확대 효과 */
+.review-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.review-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 오버레이 레이어 */
+.review-card .overlay {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 호버 시 오버레이 보이기 */
+.review-card:hover .overlay {
+  opacity: 1;
+}
+
+/* 오버레이 텍스트 스타일 */
+.review-card .overlay h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.review-card .overlay p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 리뷰 끝 */
+
+/* Notice 섹션 */
+.notice-section {
+  position: relative;       /* 드래그바 위치 조정을 위해 필요합니다 *//* 스크롤바 기준 컨테이너 */
+  width: 1320px;
+  margin: 200px auto 100px;
+  text-align: center;
+}
+.notice-section h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-family: 'NanumSquareRound';
+}
+
+/* 슬라이드 박스 스타일 */
+.notice-slide {
+  background: #E6F7FF;
+  border-radius: 20px;
+  padding: 24px;
+  box-sizing: border-box;
+  width: auto;       /* 내용에 맞춰 너비 */
+  min-width: 300px;  /* 최소너비 */
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 스크롤바 커스텀 */
+.notice-section .swiper-scrollbar {
+  position:relative;  /* 절대 위치 해제 */
+  width: 20%;         /* 너비를 부모에 맞춤 */
+  margin: 16px auto 0; /*슬라이드와 간격 */
+  height: 3px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+
+.notice-section .swiper-scrollbar .swiper-scrollbar-drag {
+  background: #555;  
+  border-radius: 3px;
+}
+
+
+/* 인스타그램 시작 */
+/* Instagram 섹션 전체 너비를 브라우저 100%로 */
+.instagram-section {
+  width: 100%;
+  max-width: 1920px;
+  margin: 200px auto;
+  text-align: center;
+  font-family: 'NanumSquareRound';
+}
+
+.instagram-section h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-family: 'NanumSquareRound';
+}
+
+.instagram-section p {
+  /* font-size: 40px; */
+  margin-bottom: 100px;
+  font-family: 'NanumSquareRound';
+}
+
+/* 슬라이더 컨테이너도 100% 사용 */
+.instagram-swiper {
+  width: 100%;
+  position: relative;
+}
+
+/* 개별 슬라이드는 auto-width (Swiper가 slidesPerView 에 맞춰 계산) */
+.instagram-swiper .swiper-slide {
+  width: auto;
+}
+
+/* 이미지 스타일 */
+.instagram-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* border-radius: 8px; */
+}
+
+/* 내비게이션 화살표 색상 */
+.instagram-prev,
+.instagram-next {
+  color: #333;
+}
+
+/* 인스타그램 끝 */
+
+/* 푸터 시작 */
+#footer{
+  /* margin-bottom: 200px; */
+  background: url(../img/footerbg.png) no-repeat center;
+  width: 100%;
+  aspect-ratio: 1920 / 530;
+  position: relative;
+  background-size: cover;
+}
+.character_yellow{
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  width: 8%;
+  /* height: 13%; */
+  animation: yellow-cloud-spin 1.5s linear infinite;
+  transform-origin: center center;
+}
+
+.character_blue{
+  position: absolute;
+  bottom: 8%;
+  left: 26%;
+  width: 8%;
+  animation: blue-cloud-spin 1.5s linear infinite;
+  transform-origin: center center;
+}
+
+.flower_pink{
+  position: absolute;
+  bottom: 7%;
+  right: 1.5%;
+  width: 6%;
+  animation: spin-pause 2s linear infinite;
+  transform-origin: center center;
+}
+.flower_orange{
+  position: absolute;
+  bottom: 22%;
+  right: 8%;
+  width: 5%;
+  animation: spin-pause 2s linear infinite;
+  transform-origin: center center;
+}
+.flower_blue{
+  position: absolute;
+  bottom: 33%;
+  right: 2%;
+  width: 7%;
+  animation: spin-pause 2s linear infinite;
+  transform-origin: center center;
+}
+
+@keyframes yellow-cloud-spin {
+  0%   { transform: rotate(-5deg); }
+  50%  { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+@keyframes blue-cloud-spin {
+  0%   { transform: rotate(5deg); }
+  50%  { transform: rotate(-5deg); }
+  100% { transform: rotate(5deg); }
+}
+
+@keyframes spin-pause {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.footer_text_container{
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  width: 100%;
+  display: flex;
+  gap: 5%;
+}
+
+.footer_text > ul{
+  display: flex;
+}
+
+.footer_text > ul > li{
+  font-size: 0.8vw;
+}
+
+.footer_text_cate{
+  gap: 2.604vw; /*1920 기준 50px*/
+  margin-bottom: 1.563vw;
+}
+
+.footer_text_info{
+  gap: 1.563vw; /*1920 기준 30px*/
+  margin-bottom: 0.781vw; /*1920 기준 15px*/
+}
+
+.footer_text_address{
+  gap: 1.042vw; /*1920 기준 20px*/
+  margin-bottom: 0.781vw;
+}
+
+.footer_text_email{
+  gap: 1.042vw; /*1920 기준 20px*/
+}
+
+.footer_text_bank > p {
+  font-size: 0.8vw;
+}
+
+.footer_text_bank > :nth-child(1){
+  margin-bottom: 1.563vw;
+}
+
+.footer_text_bank > :nth-child(2){
+  margin-bottom: 0.781vw;
+}
+
+
+/* 푸터 끝 */
+
+  
+
+
+/* ---- 기존 스타일 끝나는 부분 ---- */
+
+/* 모바일 대응 추가 */
+@media (max-width: 768px) {
+  .swiper-slide {
+    height: 55vw; /* 모바일에서는 좀 더 높게 */
+    max-height: 400px; /* 너무 커지지 않게 제한 */
+  }
+}
